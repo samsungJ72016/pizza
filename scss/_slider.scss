@@ -1,0 +1,226 @@
+.slider{
+    background: #eaeaea;
+}
+
+.slider-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.slider-block-progress{
+    margin-top: 30px;
+    h2{
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 20px;
+    }
+
+    p{
+        color: #acacac;
+        font-family: 'Roboto', sans-serif;
+        margin-bottom: 20px;
+    }
+
+    a{
+        text-decoration: none;
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif;
+        color: black;
+        line-height: 30px;
+    }
+}
+
+.slider-info{
+background: #fff;
+}
+
+.slider-info-item{
+    padding: 50px 50px 20px 50px;
+
+    span{
+        font-size: 100px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+    }
+
+    img{
+        width: 122px;
+        height: 68px;
+    }
+}
+
+.slider-info-item-text{
+    h3{
+        font-size: 35px;
+        font-weight: 900;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    p{
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+    }
+}
+
+.create{
+    display: flex;
+    justify-content: center;
+    padding: 73px 0 95px 0;
+}
+
+.create-block{
+    background-color: #e00505;
+    padding: 2px;
+    border-radius: 10px;
+    flex-basis: 80%;
+}
+
+.create-block-inner{
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    text-align: center;
+
+    p{
+        text-transform: uppercase;
+        padding: 18px 25px;
+    }
+}   
+
+@media only screen and(min-width: 1024px){
+    .slider-block-progress{
+        h2{
+        position: relative;
+        display: inline-block;
+        font-size: 45px;
+        margin: 84px 0 21px 0;
+        letter-spacing: -0.1px;
+        }
+        h2::before{
+            content: "";
+            width: 80px;
+            height: 40px;
+            background: url(../img/Shape.png) no-repeat;
+            background-size: 100% auto;
+            position: absolute;
+            left: -80px;
+        }
+
+        h2::after{
+            content: "";
+            width: 80px;
+            height: 40px;
+            background: url(../img/Shape.png) no-repeat;
+            background-size: 100% auto;
+            position: absolute;
+            left: 500px;
+        }
+
+        p{
+            font-size: 20px;
+            letter-spacing: 0.2px;
+            margin: 0;
+        }
+
+        &-list{
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 25px;
+            margin: 23px;
+
+            a{
+                position: relative;
+            }
+
+            a::before{
+                content: "";
+                border: 10px solid;
+                border-color: transparent transparent red transparent;
+                position: absolute;
+                bottom: 4px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: none;
+            }
+
+            a::after{
+                content: "";
+                height: 4px;
+                width: 100%;
+                background-color: #ee252d;
+                position: absolute;
+                bottom: 4px;
+                left: 1px;
+                display: none;
+            }
+
+            a:hover{
+                &::after,
+                &::before{
+                    display: block;
+                }
+            }
+
+            li{
+                position: relative;
+            }
+
+            li:nth-child(n+2)::before{
+                content: "";
+                width: 2px;
+                height: 15px;
+                background: rgba(20, 19, 19, 0);
+                position: absolute;
+                top: 16px;
+                left: -14px;
+            }
+        }
+
+    }
+
+    .slider-info{
+        display: flex;
+        flex-wrap: nowrap;
+
+        &-item{
+            padding: 54px 50px 56px 56px;
+            &-img{
+                span{
+                    font-size: 122px;
+                }
+
+                img{
+                    max-width: 100%;
+                }
+            }
+
+            &-text{
+                h3{
+                    font-size: 45px;
+                }
+
+                p{
+                    letter-spacing: 0.6px;
+                }
+            }
+        }
+    }
+
+    .create-block{
+        flex-basis: 435px;
+        border-radius: 20px;
+        &-inner{
+            border-radius: 20px;
+
+            p{
+                font-size: 30px;
+                padding: 26px;
+            }
+        }
+    }
+}
